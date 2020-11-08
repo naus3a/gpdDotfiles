@@ -59,7 +59,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;34m\]\u\[\033[1:35m\]@\[\033[1;34m\]\h\[\033[0;44m\]\[\033[1;30m\]\W\[\033[0m\] '
 fi
 unset color_prompt force_color_prompt
 
@@ -116,6 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# kitty
+alias icat="kitty +kitten icat"
+alias kittyDiff="kitty +kitten diff"
 
 #if [ -f /usr/bin/screenfetch ]; then screenfetch -D 'Debian' -t; fi
